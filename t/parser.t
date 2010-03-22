@@ -1,4 +1,4 @@
-use lib '../WikiText/lib';
+use lib '../wikitext-pm';
 use t::TestWikiText;
 
 plan tests => 22;
@@ -215,14 +215,14 @@ Some text.
 
 --- wikibyte
 +p
-+a target="Link to a page"
++wikilink target="Link to a page"
  Link to a page
--a
+-wikilink
  
  
-+a target="Second link"
++wikilink target="Second link"
  other page
--a
+-wikilink
 -p
 
 === pre text
@@ -312,23 +312,23 @@ I love the https://example.com site
 --- wikibyte
 +p
  I love the 
-+a href="http://example.com"
++hyperlink target="http://example.com"
  http://example.com
--a
+-hyperlink
   site
 -p
 +p
  I love the 
-+a href="http://example.com"
++hyperlink target="http://example.com"
  Example
--a
+-hyperlink
   site
 -p
 +p
  I love the 
-+a href="https://example.com"
++hyperlink target="https://example.com"
  https://example.com
--a
+-hyperlink
   site
 -p
 

@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use lib 'lib', '../WikiText/lib';
+use lib 'lib', '../wikitext-pm';
 use Test::More tests => 1;
 
 use WikiText::Socialtext;

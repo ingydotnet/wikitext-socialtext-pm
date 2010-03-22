@@ -1,4 +1,4 @@
-use lib '../WikiText/lib';
+use lib '../wikitext-pm';
 use t::TestWikiText;
 
 plan tests => 2;
