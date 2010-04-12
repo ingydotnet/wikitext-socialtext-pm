@@ -116,6 +116,7 @@ sub create_grammar {
 
         hx => {
             match => qr/^(\^+) *(.*?)(\s+=+)?\s*?\n+/,
+            phrases => $all_phrases,
             filter => sub {
                 my $node = shift;
                 $node->{type} = 'h' . length($node->{1});

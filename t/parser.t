@@ -1,7 +1,7 @@
 use lib '../wikitext-pm';
 use t::TestWikiText;
 
-plan tests => 22;
+plan tests => 23;
 
 #no_diff;
 
@@ -429,4 +429,17 @@ baz
 +p
  baz
 -p
+
+=== Phrases in Headers
+--- wikitext
+^^ The `foo()` method
+
+--- wikibyte
++h2
+ The 
++tt
+ foo()
+-tt
+  method
+-h2
 

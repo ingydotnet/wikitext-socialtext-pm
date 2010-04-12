@@ -2,9 +2,11 @@ package WikiText::Socialtext;
 use base 'WikiText';
 
 use 5.006.001;
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 1;
+
+=encoding utf-8
 
 =head1 NAME
 
