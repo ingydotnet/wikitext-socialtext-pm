@@ -1,1 +1,1 @@
-../../WikiText/t/TestWikiText.pm
+../../wikitext-pm/t/TestWikiText.pm
