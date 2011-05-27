@@ -1,3 +1,10 @@
+##
+# name:      WikiText::Socialtext::Parser
+# abstract:  Socialtext WikiText Parser Module
+# author:    Ingy döt Net <ingy@cpan.org>
+# license:   perl
+# copyright: 2008, 2010, 2011
+
 package WikiText::Socialtext::Parser;
 use strict;
 use warnings;

@@ -1,16 +1,31 @@
+##
+# name:      WikiText::Socialtext
+# abstract:  Socialtext WikiText Module
+# author:    Ingy döt Net <ingy@cpan.org>
+# license:   perl
+# copyright: 2008, 2010, 2011
+
 package WikiText::Socialtext;
+use 5.008003;
+use WikiText 0.11 ();
 use base 'WikiText';
 
-use 5.006.001;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
+
+sub to_html {
+    my $self = shift;
+    my $parser_class = ref($self) . '::Parser';
+    eval "require $parser_class; 1"
+      or die "Can't load $parser_class:\n$@";
+    require WikiText::HTML::Emitter;
+    my $parser = $parser_class->new(
+        receiver => WikiText::HTML::Emitter->new(break_lines => 1),
+    );
+
+    return $parser->parse($self->{wikitext});
+}
 
 1;
-
-=encoding utf-8
-
-=head1 NAME
-
-WikiText::Socialtext - Socialtext WikiText Module
 
 =head1 SYNOPSIS
 
@@ -21,18 +36,3 @@ WikiText::Socialtext - Socialtext WikiText Module
 =head1 DESCRIPTION
 
 This module can convert Socialtext markup to HTML.
-
-=head1 AUTHOR
-
-Ingy döt Net <ingy@cpan.org>
-
-=head1 COPYRIGHT
-
-Copyright (c) 2008, 2010. Ingy döt Net.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
-See http://www.perl.com/perl/misc/Artistic.html
-
-=cut
