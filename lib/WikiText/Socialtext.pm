@@ -10,7 +10,7 @@ use 5.008003;
 use WikiText 0.11 ();
 use base 'WikiText';
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 sub to_html {
     my $self = shift;
