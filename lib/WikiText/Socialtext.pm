@@ -7,10 +7,10 @@
 
 package WikiText::Socialtext;
 use 5.008003;
-use WikiText 0.13 ();
+use WikiText 0.14 ();
 use base 'WikiText';
 
-our $VERSION = '0.18';
+our $VERSION = '0.19';
 
 sub to_html {
     my $self = shift;
